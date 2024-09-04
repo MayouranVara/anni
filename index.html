@@ -24,12 +24,13 @@
             font-size: 3em;
             color: white;
             opacity: 0;
-            animation: typing 4s steps(22), blink 0.5s step-end infinite alternate;
+            animation: typing 4s steps(22), blink 0.75s step-end infinite alternate;
             white-space: nowrap;
             overflow: hidden;
             border-right: 3px solid white;
             display: inline-block;
             margin-bottom: 50px;
+            will-change: width, opacity;
         }
 
         @keyframes typing {
@@ -55,7 +56,8 @@
             width: 50px;
             height: 80px;
             border-radius: 50%;
-            animation: float 6s ease-in infinite;
+            animation: float 5s ease-in-out infinite;
+            will-change: transform;
         }
 
         .balloon::after {
@@ -67,6 +69,7 @@
             height: 60px;
             background-color: white;
             transform: translateX(-50%);
+            will-change: height;
         }
 
         .balloon:nth-child(1) {
@@ -76,17 +79,17 @@
 
         .balloon:nth-child(2) {
             left: 40%;
-            animation-delay: 2s;
+            animation-delay: 1.5s;
         }
 
         .balloon:nth-child(3) {
             left: 65%;
-            animation-delay: 4s;
+            animation-delay: 3s;
         }
 
         .balloon:nth-child(4) {
             left: 90%;
-            animation-delay: 6s;
+            animation-delay: 4.5s;
         }
 
         @keyframes float {
@@ -94,7 +97,7 @@
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-20px);
+                transform: translateY(-10px);
             }
             100% {
                 transform: translateY(-500px);
